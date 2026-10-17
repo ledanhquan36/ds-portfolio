@@ -1,0 +1,85 @@
+{
+  "dataset": {
+    "n_rows": 7043,
+    "churn_rate": 0.2654,
+    "churn_rate_by_contract_pct": {
+      "Month-to-month": 42.7,
+      "One year": 11.3,
+      "Two year": 2.8
+    },
+    "churn_rate_by_internet_pct": {
+      "DSL": 19.0,
+      "Fiber optic": 41.9,
+      "No": 7.4
+    }
+  },
+  "cv_table": [
+    {
+      "model": "logistic_regression",
+      "roc_auc_mean": 0.8470594031971276,
+      "roc_auc_std": 0.010996792547836032,
+      "pr_auc_mean": 0.6611551232958383
+    },
+    {
+      "model": "random_forest",
+      "roc_auc_mean": 0.8450405555197056,
+      "roc_auc_std": 0.009401505529160878,
+      "pr_auc_mean": 0.6589477874743944
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "roc_auc_mean": 0.8449794254276372,
+      "roc_auc_std": 0.009528148584569783,
+      "pr_auc_mean": 0.6604510959291059
+    }
+  ],
+  "best_model": "logistic_regression",
+  "calibration_brier": {
+    "uncalibrated": 0.16564911023283652,
+    "calibrated": 0.13580666666742203
+  },
+  "test": {
+    "n": 1409,
+    "roc_auc": 0.8454648789687152,
+    "pr_auc": 0.6506505649891815,
+    "threshold_profit_optimal": 0.705,
+    "threshold_f1_optimal": 0.30999999999999994,
+    "precision": 0.7964601769911505,
+    "recall": 0.24064171122994651,
+    "f1": 0.36960985626283366,
+    "confusion_matrix": {
+      "tn": 1012,
+      "fp": 23,
+      "fn": 284,
+      "tp": 90
+    },
+    "lift_top_decile": 2.805495505745818,
+    "capture_at_top_30pct": 0.6524064171122994
+  },
+  "business": {
+    "assumptions": {
+      "offer_cost_usd": 60.0,
+      "offer_accept_rate": 0.3,
+      "gross_margin": 0.35,
+      "value_horizon_months": 12
+    },
+    "net_value_at_optimal_threshold_usd": 2293.196999999999,
+    "net_value_contact_everyone_usd": -50249.226,
+    "customers_contacted": 113,
+    "per_1000_customers_usd": 1627.535131298793
+  },
+  "top_features_permutation_auc_drop": {
+    "tenure": 0.05,
+    "Contract": 0.0443,
+    "InternetService": 0.0247,
+    "tenure_bucket": 0.0155,
+    "OnlineSecurity": 0.0036,
+    "TechSupport": 0.0033,
+    "arpu_hist": 0.003,
+    "MultipleLines": 0.0029,
+    "MonthlyCharges": 0.0029,
+    "PaymentMethod": 0.0028,
+    "PaperlessBilling": 0.0025,
+    "StreamingTV": 0.0023
+  }
+}

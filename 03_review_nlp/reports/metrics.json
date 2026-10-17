@@ -1,0 +1,445 @@
+{
+  "dataset": {
+    "name": "20 Newsgroups (official train/test split)",
+    "n_train": 11314,
+    "n_test": 7532,
+    "n_classes": 20
+  },
+  "leakage_experiment": {
+    "with_metadata": {
+      "accuracy": 0.8633828996282528,
+      "macro_f1": 0.8577065593904495,
+      "n_features": 131711
+    },
+    "without_metadata": {
+      "accuracy": 0.6963621879978757,
+      "macro_f1": 0.6831129333043545,
+      "n_features": 56618
+    }
+  },
+  "macro_f1_inflation_from_metadata": 0.1746,
+  "model_comparison_clean": [
+    {
+      "model": "complement_nb",
+      "accuracy": 0.7136218799787573,
+      "macro_f1": 0.6966037337530777,
+      "fit_seconds": 2.6
+    },
+    {
+      "model": "linear_svc",
+      "accuracy": 0.6963621879978757,
+      "macro_f1": 0.6831129333043545,
+      "fit_seconds": 3.1
+    },
+    {
+      "model": "logistic_regression",
+      "accuracy": 0.6925119490175252,
+      "macro_f1": 0.6822715237942518,
+      "fit_seconds": 14.0
+    }
+  ],
+  "best_model": "complement_nb",
+  "best_model_test": {
+    "accuracy": 0.7136218799787573,
+    "macro_f1": 0.6966037337530777,
+    "weighted_f1": 0.7106881594917922
+  },
+  "worst_classes_f1": {
+    "talk.religion.misc": 0.232,
+    "alt.atheism": 0.368,
+    "talk.politics.misc": 0.532,
+    "sci.electronics": 0.615,
+    "comp.os.ms-windows.misc": 0.654
+  },
+  "best_classes_f1": {
+    "sci.crypt": 0.798,
+    "comp.windows.x": 0.8,
+    "talk.politics.mideast": 0.812,
+    "rec.sport.baseball": 0.88,
+    "rec.sport.hockey": 0.9
+  },
+  "top_confusions": [
+    {
+      "true": "talk.religion.misc",
+      "predicted": "soc.religion.christian",
+      "n": 98
+    },
+    {
+      "true": "talk.politics.misc",
+      "predicted": "talk.politics.guns",
+      "n": 88
+    },
+    {
+      "true": "alt.atheism",
+      "predicted": "soc.religion.christian",
+      "n": 83
+    },
+    {
+      "true": "comp.os.ms-windows.misc",
+      "predicted": "comp.sys.ibm.pc.hardware",
+      "n": 40
+    },
+    {
+      "true": "comp.sys.ibm.pc.hardware",
+      "predicted": "comp.os.ms-windows.misc",
+      "n": 37
+    },
+    {
+      "true": "comp.windows.x",
+      "predicted": "comp.graphics",
+      "n": 36
+    },
+    {
+      "true": "talk.religion.misc",
+      "predicted": "alt.atheism",
+      "n": 34
+    },
+    {
+      "true": "rec.autos",
+      "predicted": "alt.atheism",
+      "n": 30
+    }
+  ],
+  "learning_curve": [
+    {
+      "train_fraction": 0.1,
+      "n_docs": 1131,
+      "macro_f1": 0.5631708078522196
+    },
+    {
+      "train_fraction": 0.25,
+      "n_docs": 2828,
+      "macro_f1": 0.6304644193368092
+    },
+    {
+      "train_fraction": 0.5,
+      "n_docs": 5657,
+      "macro_f1": 0.6687153949816378
+    },
+    {
+      "train_fraction": 0.75,
+      "n_docs": 8485,
+      "macro_f1": 0.6835407204430097
+    },
+    {
+      "train_fraction": 1.0,
+      "n_docs": 11314,
+      "macro_f1": 0.6966037337530777
+    }
+  ],
+  "nmf_topics": [
+    {
+      "topic": 0,
+      "top_terms": [
+        "car",
+        "ve",
+        "good",
+        "bike",
+        "got",
+        "time",
+        "cars",
+        "years",
+        "engine",
+        "ago"
+      ],
+      "dominant_newsgroup": "rec.autos",
+      "n_docs": 1292
+    },
+    {
+      "topic": 1,
+      "top_terms": [
+        "geb",
+        "edu shameful",
+        "cadre dsl",
+        "dsl",
+        "geb cadre",
+        "shameful surrender",
+        "dsl pitt",
+        "intellect geb",
+        "surrender soon",
+        "gordon banks"
+      ],
+      "dominant_newsgroup": "sci.med",
+      "n_docs": 91
+    },
+    {
+      "topic": 2,
+      "top_terms": [
+        "edu",
+        "space",
+        "information",
+        "com",
+        "available",
+        "list",
+        "send",
+        "nasa",
+        "data",
+        "address"
+      ],
+      "dominant_newsgroup": "sci.space",
+      "n_docs": 922
+    },
+    {
+      "topic": 3,
+      "top_terms": [
+        "game",
+        "team",
+        "games",
+        "year",
+        "season",
+        "play",
+        "players",
+        "hockey",
+        "league",
+        "win"
+      ],
+      "dominant_newsgroup": "rec.sport.hockey",
+      "n_docs": 918
+    },
+    {
+      "topic": 4,
+      "top_terms": [
+        "thanks",
+        "advance",
+        "thanks advance",
+        "mail",
+        "hi",
+        "looking",
+        "info",
+        "appreciated",
+        "help",
+        "mail thanks"
+      ],
+      "dominant_newsgroup": "comp.graphics",
+      "n_docs": 631
+    },
+    {
+      "topic": 5,
+      "top_terms": [
+        "drive",
+        "hard",
+        "scsi",
+        "drives",
+        "disk",
+        "hard drive",
+        "controller",
+        "ide",
+        "floppy",
+        "mac"
+      ],
+      "dominant_newsgroup": "comp.sys.ibm.pc.hardware",
+      "n_docs": 412
+    },
+    {
+      "topic": 6,
+      "top_terms": [
+        "sale",
+        "offer",
+        "shipping",
+        "condition",
+        "new",
+        "price",
+        "asking",
+        "best offer",
+        "sell",
+        "interested"
+      ],
+      "dominant_newsgroup": "misc.forsale",
+      "n_docs": 514
+    },
+    {
+      "topic": 7,
+      "top_terms": [
+        "god",
+        "jesus",
+        "bible",
+        "believe",
+        "christians",
+        "christian",
+        "christ",
+        "faith",
+        "say",
+        "life"
+      ],
+      "dominant_newsgroup": "soc.religion.christian",
+      "n_docs": 872
+    },
+    {
+      "topic": 8,
+      "top_terms": [
+        "key",
+        "chip",
+        "clipper",
+        "encryption",
+        "keys",
+        "government",
+        "escrow",
+        "clipper chip",
+        "algorithm",
+        "use"
+      ],
+      "dominant_newsgroup": "sci.crypt",
+      "n_docs": 420
+    },
+    {
+      "topic": 9,
+      "top_terms": [
+        "people",
+        "israel",
+        "government",
+        "state",
+        "israeli",
+        "war",
+        "jews",
+        "rights",
+        "law",
+        "gun"
+      ],
+      "dominant_newsgroup": "talk.politics.mideast",
+      "n_docs": 1354
+    },
+    {
+      "topic": 10,
+      "top_terms": [
+        "card",
+        "video",
+        "monitor",
+        "bus",
+        "video card",
+        "cards",
+        "vga",
+        "drivers",
+        "driver",
+        "color"
+      ],
+      "dominant_newsgroup": "comp.sys.ibm.pc.hardware",
+      "n_docs": 550
+    },
+    {
+      "topic": 11,
+      "top_terms": [
+        "does",
+        "know",
+        "does know",
+        "anybody",
+        "does anybody",
+        "anybody know",
+        "don know",
+        "know ftp",
+        "ftp",
+        "does mean"
+      ],
+      "dominant_newsgroup": "sci.electronics",
+      "n_docs": 629
+    },
+    {
+      "topic": 12,
+      "top_terms": [
+        "don",
+        "just",
+        "think",
+        "like",
+        "know",
+        "people",
+        "want",
+        "don know",
+        "really",
+        "don think"
+      ],
+      "dominant_newsgroup": "sci.med",
+      "n_docs": 1681
+    },
+    {
+      "topic": 13,
+      "top_terms": [
+        "windows",
+        "file",
+        "dos",
+        "window",
+        "files",
+        "using",
+        "program",
+        "use",
+        "problem",
+        "running"
+      ],
+      "dominant_newsgroup": "comp.windows.x",
+      "n_docs": 903
+    },
+    {
+      "topic": 14,
+      "top_terms": [
+        "com",
+        "ico tek",
+        "vice ico",
+        "tek com",
+        "bobbe",
+        "bobbe vice",
+        "ico",
+        "tek",
+        "stay blew",
+        "beauchaine"
+      ],
+      "dominant_newsgroup": "alt.atheism",
+      "n_docs": 125
+    }
+  ],
+  "most_informative_terms": {
+    "sci.space": [
+      "space",
+      "orbit",
+      "launch",
+      "spacecraft",
+      "nasa",
+      "moon",
+      "shuttle",
+      "solar",
+      "lunar",
+      "flight",
+      "mars",
+      "earth"
+    ],
+    "rec.sport.hockey": [
+      "hockey",
+      "nhl",
+      "puck",
+      "team",
+      "playoff",
+      "leafs",
+      "playoffs",
+      "mask",
+      "ice",
+      "devils",
+      "coach",
+      "season"
+    ],
+    "talk.politics.guns": [
+      "gun",
+      "guns",
+      "weapons",
+      "firearms",
+      "nra",
+      "weapon",
+      "firearm",
+      "fbi",
+      "atf",
+      "bd",
+      "batf",
+      "hunting"
+    ],
+    "comp.graphics": [
+      "graphics",
+      "image",
+      "images",
+      "pov",
+      "animation",
+      "tiff",
+      "viewer",
+      "polygon",
+      "cview",
+      "format",
+      "studio",
+      "sphere"
+    ]
+  }
+}

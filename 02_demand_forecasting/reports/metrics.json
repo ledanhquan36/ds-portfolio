@@ -1,0 +1,112 @@
+{
+  "task": "24h-ahead hourly demand forecast, UCI bike sharing 2011-2012",
+  "rows_total": 17379,
+  "rows_modelled": 16339,
+  "train_window": [
+    "2011-01-15 00:00:00",
+    "2012-11-05 00:00:00"
+  ],
+  "test_window": [
+    "2012-11-06 13:00:00",
+    "2012-12-31 23:00:00"
+  ],
+  "baselines_test": {
+    "naive_same_hour_yesterday": {
+      "mae": 63.41988950276243,
+      "rmse": 106.68016431635047,
+      "smape_pct": 46.24225844427154,
+      "r2": 0.6179280803510618
+    },
+    "seasonal_naive_same_hour_last_week": {
+      "mae": 72.58879242304657,
+      "rmse": 119.88760192572535,
+      "smape_pct": 45.94001095186972,
+      "r2": 0.517467783011837
+    },
+    "mean_same_hour_last_3_weeks": {
+      "mae": 66.75822152065246,
+      "rmse": 112.70060096651105,
+      "smape_pct": 41.02026510799162,
+      "r2": 0.573587200496432
+    }
+  },
+  "cv_table": [
+    {
+      "model": "ridge",
+      "cv_mae_mean": 50.34082333427916,
+      "cv_mae_std": 5.885749229790584,
+      "fold_maes": [
+        46.3,
+        60.76,
+        44.36,
+        52.64,
+        47.64
+      ]
+    },
+    {
+      "model": "hgb_squared",
+      "cv_mae_mean": 39.95758843218522,
+      "cv_mae_std": 3.1360973086422006,
+      "fold_maes": [
+        39.58,
+        45.77,
+        36.24,
+        39.19,
+        39.02
+      ]
+    },
+    {
+      "model": "hgb_poisson",
+      "cv_mae_mean": 37.94458101963927,
+      "cv_mae_std": 3.967892237099753,
+      "fold_maes": [
+        37.37,
+        45.59,
+        34.21,
+        36.72,
+        35.83
+      ]
+    }
+  ],
+  "best_model": "hgb_poisson",
+  "models_test": {
+    "ridge": {
+      "mae": 51.74764299939174,
+      "rmse": 84.14870618353875,
+      "smape_pct": 47.097784753074066,
+      "r2": 0.7622762051639616
+    },
+    "hgb_squared": {
+      "mae": 40.74554730776071,
+      "rmse": 65.51985563050553,
+      "smape_pct": 37.518940949863044,
+      "r2": 0.8558802061825438
+    },
+    "hgb_poisson": {
+      "mae": 38.698206604945234,
+      "rmse": 61.22442413666569,
+      "smape_pct": 28.93806103994521,
+      "r2": 0.8741575437673045
+    }
+  },
+  "improvement_vs_seasonal_naive_pct": 46.7,
+  "prediction_interval": {
+    "nominal": 0.9,
+    "empirical_coverage": 0.7955801104972375,
+    "mean_width_rides": 141.82096245406592
+  },
+  "top_features_permutation_mae_increase": {
+    "same_hour_3w_mean": 75.702,
+    "dayofyear": 11.414,
+    "workingday": 5.922,
+    "hour_cos": 5.847,
+    "lag_24h": 5.756,
+    "humidity": 3.542,
+    "temp": 3.124,
+    "hour": 3.072,
+    "doy_cos": 2.569,
+    "lag_336h": 2.441,
+    "weather": 2.126,
+    "dayofweek": 1.584
+  }
+}

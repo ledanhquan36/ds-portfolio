@@ -1,0 +1,131 @@
+{
+  "simulation_ground_truth": {
+    "true_rel_lift": 0.06,
+    "base_conversion": 0.082,
+    "n_per_arm": 80000,
+    "days": 14
+  },
+  "design": {
+    "baseline_conversion": 0.082,
+    "alpha": 0.05,
+    "power": 0.8,
+    "n_per_arm_planned": 80000,
+    "mde_rel_at_planned_n": 0.046869277199060116,
+    "n_per_arm_needed_for_2pct_lift": 443342,
+    "weeks_needed_at_planned_traffic": 11.1
+  },
+  "srm_check": {
+    "control": 80000,
+    "treatment": 80000,
+    "chi2": 0.0,
+    "p_value": 1.0
+  },
+  "primary_metric_conversion": {
+    "control_rate": 0.090075,
+    "treatment_rate": 0.0974375,
+    "abs_diff": 0.007362499999999994,
+    "rel_lift": 0.08173744102137101,
+    "z": 5.051643298922421,
+    "p_value": 4.3802513194357573e-07,
+    "ci95_abs": [
+      0.004506185100901519,
+      0.010218814899098469
+    ],
+    "ci95_rel": [
+      0.050027034148226686,
+      0.11344784789451533
+    ]
+  },
+  "revenue_per_user_bootstrap": {
+    "diff": 0.7369136249999979,
+    "ci95": [
+      0.2809210781249987,
+      1.2199705468750024
+    ],
+    "p_value_two_sided": 0.0015
+  },
+  "revenue_per_session_delta_method": {
+    "control": 3.5028846092031616,
+    "treatment": 3.764000861089736,
+    "diff": 0.2611162518865746,
+    "rel_lift": 0.07454320681890046,
+    "p_value": 0.0023685310771923707,
+    "ci95": [
+      0.09274870146257957,
+      0.42948380231056965
+    ]
+  },
+  "cuped": {
+    "theta": 0.06507340209883908,
+    "correlation_pre_post": 0.3059428881708176,
+    "variance_reduction_pct": 9.360105082230119,
+    "se_reduction_pct": 4.794971968847827,
+    "raw": {
+      "diff": 0.7369136249999979,
+      "ci95": [
+        0.27504864917255706,
+        1.1987786008274388
+      ],
+      "p_value": 0.0017653758199540636
+    },
+    "cuped": {
+      "diff": 0.6965769900839316,
+      "ci95": [
+        0.2568583103813423,
+        1.136295669786521
+      ],
+      "p_value": 0.001904011404163743
+    },
+    "effective_sample_size_multiplier": 1.1032659874184259
+  },
+  "peeking": {
+    "looks": 7,
+    "false_positive_rate_fixed_horizon": 0.05266666666666667,
+    "false_positive_rate_with_peeking": 0.163,
+    "naive_boundary_z": 1.959963984540054,
+    "calibrated_sequential_boundary_z": 2.444860216419924,
+    "n_simulations": 3000
+  },
+  "multiple_testing_bh": {
+    "conversion": {
+      "p_value": 4.3802513194357573e-07,
+      "bh_threshold": 0.010000000000000002,
+      "significant_after_bh": true
+    },
+    "revenue_per_user": {
+      "p_value": 0.0015,
+      "bh_threshold": 0.020000000000000004,
+      "significant_after_bh": true
+    },
+    "revenue_per_session": {
+      "p_value": 0.0023685310771923707,
+      "bh_threshold": 0.03,
+      "significant_after_bh": true
+    },
+    "sessions_per_user": {
+      "p_value": 0.3266277497137142,
+      "bh_threshold": 0.04000000000000001,
+      "significant_after_bh": false
+    },
+    "pre_period_revenue_balance": {
+      "p_value": 0.5758393994336135,
+      "bh_threshold": 0.05,
+      "significant_after_bh": false
+    }
+  },
+  "bayesian": {
+    "p_treatment_better": 1.0,
+    "p_rel_lift_above_pre_registered": 0.99992,
+    "rel_lift_posterior_mean": 0.08189770867229576,
+    "rel_lift_cred_interval_95": [
+      0.04930030237782994,
+      0.11517933217142477
+    ],
+    "expected_loss_if_ship": 0.0,
+    "expected_loss_if_not_ship": 0.007365256797673354
+  },
+  "decision": {
+    "ship": true,
+    "rule": "ship if p < 0.05, P(rel lift > 2%) > 0.90 and no SRM"
+  }
+}
