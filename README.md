@@ -64,11 +64,7 @@ Chọn 2–3 dòng, đừng đưa cả bốn. Mỗi dòng theo cấu trúc *vi�
 ### Dòng mô tả mục Projects (ngắn gọn)
 > **Data Science Portfolio** — 4 dự án end-to-end (churn & tối ưu chiến dịch, dự báo chuỗi thời gian, NLP phân loại văn bản, phân tích A/B test) trên dữ liệu công khai; Python, scikit-learn, pandas, scipy. `github.com/ledanhquan36/ds-portfolio`
 
-## Trước khi đưa lên CV, nên làm 3 việc
 
-1. **Chạy lại và đọc hiểu từng con số.** Người phỏng vấn sẽ hỏi "tại sao chọn Poisson loss?", "ngưỡng 0,705 ở đâu ra?", "CUPED hoạt động thế nào?" — câu trả lời đều nằm trong `REPORT.md`, nhưng phải tự giải thích được.
-2. **Đổi một thứ gì đó thành của bạn.** Ví dụ: thay dữ liệu dự án 1 bằng dữ liệu một ngành bạn quan tâm, thêm SHAP cho dự án 1, thử SARIMAX cho dự án 2, hoặc làm dự án 3 với tiếng Việt (`underthesea`/`pyvi` để tách từ). Một đóng góp riêng đáng giá hơn bốn dự án sao chép.
-3. **Đẩy lên GitHub và viết README như trên.** Nhà tuyển dụng đọc README, rất ít khi đọc code.
 
 ```bash
 git init && git add . && git commit -m "Data science portfolio: 4 end-to-end projects"
@@ -76,4 +72,3 @@ git remote add origin https://github.com/ledanhquan36/ds-portfolio.git
 git push -u origin main
 ```
 
-> Trung thực: ba bộ dữ liệu ở đây là dữ liệu công khai kinh điển, nên hãy ghi rõ nguồn trong CV/phỏng vấn — điểm cộng đến từ **cách làm** (chống rò rỉ, baseline, ngưỡng theo lợi nhuận, kiểm định đúng chuẩn), không phải từ việc tự nhận đã làm trên dữ liệu doanh nghiệp.
