@@ -1,4 +1,4 @@
-# Data Science Portfolio — 4 dự án end-to-end
+# Data Science Portfolio : 4 dự án end-to-end
 
 Bốn dự án độc lập, mỗi dự án chạy bằng **một câu lệnh**, tự tải dữ liệu, tự xuất chỉ số và hình ảnh.
 Ba dự án dùng **dữ liệu công khai thật**; dự án thống kê dùng mô phỏng *có chủ đích* vì cần biết ground truth để chứng minh phương pháp đúng.
@@ -45,24 +45,19 @@ Python 3.10, chỉ dùng numpy / pandas / scikit-learn / scipy / statsmodels / m
 
 ---
 
-## Gạch đầu dòng gợi ý cho CV
 
-Chọn 2–3 dòng, đừng đưa cả bốn. Mỗi dòng theo cấu trúc *việc đã làm → cách làm → con số*:
 
-**Dự án 1 — churn**
+**Dự án 1.churn**
 > Xây pipeline dự đoán khách hàng rời mạng trên 7.043 khách hàng (scikit-learn): feature engineering theo nghiệp vụ, so sánh 3 mô hình bằng stratified CV, hiệu chỉnh xác suất bằng isotonic (Brier −18%), đạt ROC-AUC 0,845 và lift 2,8× ở decile cao nhất. Tối ưu ngưỡng theo giá trị kỳ vọng của chiến dịch thay vì F1, chuyển một chiến dịch lỗ 50.000 USD thành có lãi ~1.600 USD/1.000 khách hàng.
 
-**Dự án 2 — dự báo**
+**Dự án 2.dự báo**
 > Dự báo nhu cầu theo giờ trước 24 giờ trên 17.379 quan sát: đặc trưng trễ/rolling tuân thủ ràng buộc thời gian thực, validation bằng expanding-window TimeSeriesSplit và 8 tuần hold-out, gradient boosting với Poisson loss đạt MAE 38,7 — tốt hơn baseline nghiệp vụ 46,7%; kèm khoảng dự báo bằng quantile regression và đánh giá độ phủ thực tế (79,6% so với 90% danh nghĩa).
 
-**Dự án 3 — NLP**
+**Dự án 3.NLP**
 > Phân loại văn bản 20 lớp (18.846 tài liệu) với TF-IDF + ComplementNB/LinearSVC đạt macro-F1 0,697; thiết kế thí nghiệm chứng minh metadata của bộ benchmark thổi phồng macro-F1 thêm 0,175, và dùng NMF để trích 15 chủ đề không cần nhãn.
 
-**Dự án 4 — thống kê/experimentation**
+**Dự án 4.thống kê/experimentation**
 > Xây bộ phân tích A/B test: power analysis & MDE, kiểm tra sample ratio mismatch, z-test/bootstrap/delta method cho chỉ số tỷ lệ, CUPED giảm 9,4% phương sai (tương đương 1,1× lưu lượng), mô phỏng định lượng tác hại của việc "peeking" (sai số loại I 5% → 16,3%) và hiệu chuẩn ngưỡng chuỗi, cùng quyết định Bayesian theo ngưỡng đăng ký trước.
-
-### Dòng mô tả mục Projects (ngắn gọn)
-> **Data Science Portfolio** — 4 dự án end-to-end (churn & tối ưu chiến dịch, dự báo chuỗi thời gian, NLP phân loại văn bản, phân tích A/B test) trên dữ liệu công khai; Python, scikit-learn, pandas, scipy. `github.com/ledanhquan36/ds-portfolio`
 
 
 
